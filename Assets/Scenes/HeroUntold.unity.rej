@@ -1,9 +1,0 @@
-diff a/Assets/Scenes/HeroUntold.unity b/Assets/Scenes/HeroUntold.unity	(rejected hunks)
-@@ -8414,6 +8414,7 @@
-   - component: {fileID: 1939447346}
-   - component: {fileID: 1939447345}
-   m_Layer: 0
-+  m_Name: earth sphere  fuck this spehereereererrerere
-   m_TagString: Untagged
-   m_Icon: {fileID: 0}
-   m_NavMeshLayer: 0
