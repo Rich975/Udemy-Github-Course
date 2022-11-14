@@ -1,6 +1,6 @@
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameBehaviour : MonoBehaviour
 {
@@ -48,7 +48,7 @@ public class GameBehaviour : MonoBehaviour
         {
             _playerHP = value;
             healthText.text = "Player Health: " + HP;
-            if(_playerHP <= 0)
+            if (_playerHP <= 0)
             {
                 UpdateScene("You want another life with that?");
                 loseButton.gameObject.SetActive(true);
@@ -57,15 +57,13 @@ public class GameBehaviour : MonoBehaviour
             {
                 progressText.text = "Ouch...";
             }
-
         }
     }
 
     private void UpdateScene(string text)
     {
-
         progressText.text = text;
-        Time.timeScale = 0;;
+        Time.timeScale = 0; ;
     }
 
     public void RestartScene()
@@ -73,5 +71,4 @@ public class GameBehaviour : MonoBehaviour
         SceneManager.LoadScene(0);
         Time.timeScale = 1f;
     }
-
 }
