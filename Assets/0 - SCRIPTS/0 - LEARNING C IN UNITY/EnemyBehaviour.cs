@@ -12,6 +12,21 @@ public class EnemyBehaviour : MonoBehaviour
 
     public Transform player;
 
+    private int _lives = 3;
+    public int EnemyLives
+    {
+        get { return _lives; }
+        private set
+        {
+            _lives = value;
+            if(_lives <= 0)
+            {
+                Destroy(this.gameObject);
+                Debug.Log("Enemy down");
+            }
+        }
+    }
+
     private void Start()
     {
         player = GameObject.Find("PlayerFPController").GetComponent<Transform>();
@@ -62,6 +77,15 @@ public class EnemyBehaviour : MonoBehaviour
         if (other.name == "PlayerFPController")
         {
             Debug.Log("Player out of detection range, resuming patrol");
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.name == "Bullet(Clone)")
+        {
+            EnemyLives -= 1;
+            Debug.Log("Critical hit!");
         }
     }
 }
