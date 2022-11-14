@@ -22,11 +22,14 @@ public class PlayerBehaviour : MonoBehaviour
 
     private bool _isShooting;
 
+    private GameBehaviour _gameManager;
+
     private void Start()
     {
         _rb = GetComponent<Rigidbody>();
         _col = GetComponent<CapsuleCollider>();
         groundLayer = LayerMask.GetMask("Ground");
+        _gameManager = GameObject.Find("Game_Manager").GetComponent<GameBehaviour>();
     }
 
     private void Update()
@@ -78,4 +81,14 @@ public class PlayerBehaviour : MonoBehaviour
 
         return grounded;
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.name == "Enemy")
+        {
+            _gameManager.HP -= 1;
+        }
+    }
+
+
 }
