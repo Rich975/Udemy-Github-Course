@@ -2245,7 +2245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60b328642a69d42499d0cff875b35892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxItems: 1
+  maxItems: 5
   healthText: {fileID: 1473329232}
   itemText: {fileID: 1904328312}
   progressText: {fileID: 1111631992}
